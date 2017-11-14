@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Dictionary Editor</title>
+	<link rel="shortcut icon" type="image/x-icon" href="assets/img/icon.ico" />
+	<link rel="stylesheet" href="assets/css/styles.css" />
+	<script src="assets/js/jquery.js"></script>
+	<script src="assets/js/jquery.generateFile.js"></script>
+	<script src="assets/js/dict_edit.js"></script>
+	<script type="text/javascript" src="assets/js/jscolor/jscolor.js"></script>
+</head>
+<body>
+	<div id="dictInputDiv">Dictionary: <input type="file" id="dict" name="datafile" size="40"></div>
+
+	<div style="display:none" id="extraz">
+		<table style = "width:100%">
+			<tr>
+				<td>
+					<select id="phrases" name="decision2" size="10"/>
+				</td>
+				<td style="vertical-align:top">
+					<table style = "width:100%">
+						<tr>
+							<td>
+								Filter by id:
+							</td>
+							<td>
+								<input type="text" id="filter" name="fname"><input type="button" id="filterreset" value="Reset" size="40">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Filter by text:
+							</td>
+							<td>
+								<input type="text" id="filterByText" name="fname"><input type="button" id="filterbynamereset" value="Reset" size="40">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								New Phrase:
+							</td>
+							<td>
+								<input type="text" id="newphrase" name="newphrase"><input type="button" id="phraseadd" name="phraseadd" value="Add" size="40">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div style="display:none" id="deletebuttondiv">
+									<input type="button" id="removeentry" value="Delete phrase" size="40">
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+							Default text color: 
+							</td>
+							<td>
+								<input id="textColor" class="color {onImmediateChange:'updateDefaultTextColor(this);'}" value="000000">
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+							Default outline color:
+							</td>
+							<td>
+								<input id="outlineColor" class="color {onImmediateChange:'updateDefaultOutlineColor(this);'}" value="6524FF">
+							</td>
+							<td>
+								<input type="checkbox" id="enableOutline">
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+							Background color:
+							</td>
+							<td>
+								<input id="backgroundColor" class="color {onImmediateChange:'updateBackgroundColor(this);'}" value="a0a0a0">
+							</td>
+							<td>
+								<input type="checkbox" id="enableBackgroundColor">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="testText">
+									test <span class="testCustomText">test</span> test
+								</div>
+							</td>
+							<td>
+								<input type="checkbox" id="showMotkPhrases" unchecked>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input id="setColorPicker" class="color {onImmediateChange:'updateTestPhrase(this);'}" value="000000">
+							</td>
+							<td>
+								<input type="button" id="setColor" value="Set" size="40">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input id="setOutlinePicker" class="color {onImmediateChange:'updateTestPhrase(this);'}" value="000000">
+							</td>
+							<td>
+								<input type="button" id="setOutline" value="Set" size="40">
+							</td>
+							<td>
+								<input type="checkbox" id="enableTestOutline">
+							</td>
+						</tr>
+					</table>
+					<table style = "width:100%">
+						<tr>
+							<td>
+								<img onclick="addImg('[icon-11]')" src='assets/img/icons/TypeNature.png' />
+							</td>
+							<td>
+								<img onclick="addImg('[icon-10]')" src='assets/img/icons/TypeEnergy.png' />
+							</td>
+							<td>
+								<img onclick="addImg('[icon-12]')" src='assets/img/icons/TypePsyonic.png' />
+							</td>
+							<td>
+								<img onclick="addImg('[icon-8]')" src='assets/img/icons/TypeChaos.png' />
+							</td>
+							<td>
+								<img onclick="addImg('[icon-9]')" src='assets/img/icons/TypeConstruct.png' />
+							</td>
+							<td>
+								<img onclick="addImg('[icon-1]')" src='assets/img/icons/CurrencyIconCoins42x42.png' />
+							</td>
+							<td>
+								<img onclick="addImg('[icon-2]')" src='assets/img/icons/CurrencyIconDiamond42x42.png' />
+							</td>
+							<td>
+								<img onclick="addImg('[icon-3]')" src='assets/img/icons/PuzzlePiece42x42.png' />
+							</td>
+							<td>
+								<img onclick="addImg('[tag-n]')" src='assets/img/icons/n.png' />
+							</td>
+
+						</tr>
+					</table>
+				</td>
+				<td></td>
+			</tr>
+		</table>
+
+	<output id="list"></output>
+	<output id="locas"></output>
+</body>
+</html>
